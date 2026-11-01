@@ -8,7 +8,7 @@ def calculate_delivery(subtotal, express=False):
 
     if subtotal < 1000:
         cost = 300
-    elif subtotal <= 5000:
+    elif subtotal < 5000:
         cost = 150
     else:
         cost = 0
