@@ -23,4 +23,11 @@ jobs:
         run: pip install -r requirements-dev.txt
 
       - name: Запуск тестов
-        run: python -m pytest -q
+        run: python -m pytest -q --junitxml=reports/junit.xml
+
+      - name: Сохранение отчёта
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-report
+          path: reports/junit.xml
